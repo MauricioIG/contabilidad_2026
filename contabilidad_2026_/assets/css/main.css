@@ -173,11 +173,28 @@
   margin-right: 8px;
 }
 
+
 .header .logo h1 {
   font-size: 30px;
   margin: 0;
   font-weight: 500;
-  color: var(--heading-color);
+  color: var(--nav-hover-color);
+  font-family: var(--nav-font);
+  transition: color 0.3s;
+  border-bottom: 2px solid var(--nav-hover-color);
+}
+
+.header .logo.active,
+.header .logo.active:hover {
+  color: inherit;
+  border-bottom: none !important;
+}
+
+.header .logo.active h1,
+.header .logo.active:hover h1 {
+  color: var(--nav-hover-color);
+  text-decoration: none;
+  border-bottom: none;
 }
 
 .header .btn-getstarted,
