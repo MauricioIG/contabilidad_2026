@@ -1,3 +1,11 @@
+/* Navbar fondo y sombra al hacer scroll */
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(2px);
+}
+
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/

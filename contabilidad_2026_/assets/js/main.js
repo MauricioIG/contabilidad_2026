@@ -6,21 +6,24 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+
+(function () {
   "use strict";
 
   /**
-   * Apply .scrolled class to the body as the page is scrolled down
+   * Navbar: fondo y sombra al hacer scroll
    */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+  function toggleNavbarScrolled() {
+    const header = document.querySelector('#header');
+    if (!header) return;
+    if (window.scrollY > 60) {
+      header.classList.add('navbar-scrolled');
+    } else {
+      header.classList.remove('navbar-scrolled');
+    }
   }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
+  document.addEventListener('scroll', toggleNavbarScrolled);
+  window.addEventListener('load', toggleNavbarScrolled);
 
   /**
    * Mobile nav toggle
@@ -52,7 +55,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -105,7 +108,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -131,12 +134,12 @@
 
   const pricingContainers = document.querySelectorAll('.pricing-toggle-container');
 
-  pricingContainers.forEach(function(container) {
+  pricingContainers.forEach(function (container) {
     const pricingSwitch = container.querySelector('.pricing-toggle input[type="checkbox"]');
     const monthlyText = container.querySelector('.monthly');
     const yearlyText = container.querySelector('.yearly');
 
-    pricingSwitch.addEventListener('change', function() {
+    pricingSwitch.addEventListener('change', function () {
       const pricingItems = container.querySelectorAll('.pricing-item');
 
       if (this.checked) {
@@ -167,7 +170,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
