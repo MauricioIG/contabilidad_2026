@@ -1,0 +1,31 @@
+# Archivos y carpetas comunes a ignorar en proyectos web
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales y de respaldo
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Configuración de editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de sistema operativo
+Desktop.ini
+
+# Archivos de entorno local
+.env
+.env.*
+
+# Dependencias (si usas npm o composer, descomenta la línea correspondiente)
+# node_modules/
+# vendor/
+
+# Salidas de compilación (si usas herramientas de build)
+# dist/
+# build/
